@@ -8,7 +8,6 @@ const instance = axios.create({
 
 function Colors() {
     const [colors, setColors] = useState([]);
-    console.log(colors);
     useEffect(() => {
         instance.get(`/api/colors`)
             .then(res => {
@@ -19,8 +18,8 @@ function Colors() {
 
     return (
         <div>
-            {colors.map((color) => {
-               return <div>{'this is the color ' + color.color}</div>
+            {colors.map((element, index) => {
+               return <div>{'this is the color ' + element.color}</div>
             })}
         </div>
     )
